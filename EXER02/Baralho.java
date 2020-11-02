@@ -17,10 +17,14 @@ public class Baralho extends Carta{
     public Baralho() {
         
         // Números das Cartas do baralho
-        this.numeros = new String[]{ "Ás","2","3","4","5","6","7","8","9","10","Valete","Dama","Rei" };
+        this.numeros = new String[]{ 
+            "Ás","2","3","4","5","6","7","8","9","10","Valete","Dama","Rei" 
+        };
         
         // Naipes das Cartas do baralho
-        this.naipes = new String[]{ "Copas","Espadas","Ouro","Paus" }; 
+        this.naipes = new String[]{ 
+            "Copas","Espadas","Ouro","Paus"
+        }; 
         
     }
     
@@ -29,26 +33,26 @@ public class Baralho extends Carta{
     public String gerarCarta(){
         
         String num = "";
-        String naipe  = "";
+        String np  = "";
         
         Random aleatorio = new Random();
         
         try{
-            num = this.getNumero(aleatorio.nextInt(265));
+            num = this.getNumero(aleatorio.nextInt(13));
         }catch (Exception e){
             System.err.print("Não foi possível gerar um número de carta aleatório");
             System.exit(0);
         }
         
         try{
-            naipe = this.getNaipe(aleatorio.nextInt(4));
+            np = this.getNaipe(aleatorio.nextInt(4));
         }catch(Exception e){
             System.err.print("Não foi possível gerar um naipe de carta aleatório");
             System.exit(0);
         }
         
         try{
-            this.cartaBaralho = this.carta(num, naipe);
+            this.cartaBaralho = "Carta Gerada: " + this.carta(num, np);
         }catch(Exception e){
             System.err.println("Não foi possível gerar a carta!");
             System.exit(0);
@@ -81,7 +85,7 @@ public class Baralho extends Carta{
         
         try{
             naipe = this.naipes[pos];
-        }catch(Exception e ){
+        }catch(Exception e){
             System.err.println("O naipe não existe no baralho!");
             System.exit(0);
         }
@@ -103,6 +107,17 @@ public class Baralho extends Carta{
         }
         
         return numCartas;
+    }
+    
+    // Método para listar todas cartas do baralho
+    public void ListarCartas(){
+        
+        for (int i = 0; i <= this.numeros.length; i++){
+            for (int j = 0; j <= this.naipes.length; j++){        
+                this.carta(this.getNumero(i), this.getNaipe(j));    
+            }
+        }
+        
     }
     
 }

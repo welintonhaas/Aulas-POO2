@@ -6,25 +6,25 @@
 public class Carta {
     
     // Variáveis da Classe Carta
-    private String numero;
-    private String naipe;
+    private String numeroCarta;
+    private String naipeCarta;
     
     // Método para criar uma carta
-    public String carta(String numero,String naipe){
+    public String carta(String nu,String na){
         
-        String carta = "";
+        String c = "";
         
         try {
-            this.numero = numero;
-            this.naipe = naipe;
-            carta = this.numero + " de " + this.naipe;
+            this.numeroCarta = nu;
+            this.naipeCarta = na;
+            c = this.numeroCarta + " de " + this.naipeCarta;
             
         }catch(Exception e){
-            System.err.println("Parâmetros inválidos! " + e.getMessage());
+            System.err.println("Parâmetros inválidos!");
             System.exit(0);
         }
         
-        return carta;
+        return c;
     }
     
 }

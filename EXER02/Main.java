@@ -16,14 +16,17 @@ public class Main {
         // Obtem o número de cartas do baralho
         int numCartas = baralho.getNumCartas();
         
-        // Impressão dos resultados
+        // Exibe a carta gerada
         System.out.println(carta);
         
         if (numCartas != 0 ){
-            System.out.println(" O baralho tem " + numCartas + " Cartas");
+            System.out.println("O baralho tem " + numCartas + " Cartas");
         }else {
-            System.out.print("Não foi possível obter a carta!");
+            System.out.print("Não foi possível gerar a carta!");
         }
+        
+        // Lista de todas as cartas do baralho
+        baralho.ListarCartas(); // < - GOSTARIA DE UMA EXPLICAÇÃO EM AULA DO PORQUE ISSO NÃO FUNCIONOU... NÃO CONSEGUI ENTENDER...
         
     }
         
